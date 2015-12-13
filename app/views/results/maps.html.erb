@@ -1,0 +1,352 @@
+      <!DOCTYPE html>
+      <html>
+      <head>
+      <title>Simple Map</title>
+      <meta name="viewport" content="initial-scale=1.0">
+          <meta charset="utf-8">
+
+      </head>
+      <body>
+
+
+      <div id="map"></div>
+
+      <%= render("direction_panel") %>
+      <script>
+//        $(document).on ("ready",function() {
+//          $('map-header').css('margin-top', '5px');
+//        });
+
+
+      var map;
+      var place, service;
+      var geocoder =  new google.maps.Geocoder();
+      var from = localStorage.getItem("startpoint");
+      var to = localStorage.getItem("endpoint");
+      var radius = localStorage.getItem("radius");
+      var directionsDisplay;
+      var directionsService = new google.maps.DirectionsService();
+      var  mode = localStorage.getItem("mode");
+      var selected = localStorage.getItem("wish_do_list").split(",");
+      var iconBase = 'https://maps.google.com/mapfiles/kml/';
+      var alreadyShown = {};
+      var icons = {
+        art_gallery: {
+          icon: iconBase + 'pal4/icon13.png'
+        },
+        night_club: {
+          icon: iconBase + 'pal2/icon19.png'
+        },
+        movie_theater: {
+          icon: iconBase + "pal2/icon30.png"
+        },
+        bar: {
+          icon: iconBase + 'pal2/icon19.png'
+        },
+        park: {
+          icon: iconBase + 'pal2/icon4.png'
+        },
+        zoo: {
+          icon: iconBase + 'pal2/icon0.png'
+        },
+        amusement_park: {
+          icon: iconBase + 'pal4/icon21.png'
+        },
+        gas_station: {
+          icon: iconBase + 'pal2/icon29.png'
+        },
+        aquarium: {
+          icon: iconBase + 'pal4/icon6.png'
+        },
+        campground: {
+          icon: iconBase + 'pal3/icon23.png'
+        },
+        bowling_alley: {
+          icon: iconBase + 'pal3/icon15.png'
+        },
+        casino: {
+          icon: iconBase + 'pal2/icon59.png'
+        },
+        city_hall: {
+          icon: iconBase + 'pal3/icon21.png'
+        },
+        food: {
+            icon: iconBase + 'pal2/icon46.png'
+        },
+        museum: {
+          icon: iconBase + 'pal3/icon30.png'
+        },
+        hindu_temple: {
+          icon: iconBase + 'pal2/icon3.png'
+        },
+        restaurant: {
+          icon: iconBase + 'pal2/icon46.png'
+        },
+        cafe: {
+          icon: iconBase + 'pal2/icon62.png'
+        },
+        rv_park: {
+          icon: iconBase + 'pal2/icon4.png'
+        },
+        car_repair: {
+          icon: iconBase + 'pal2/icon29.png'
+        },
+        convenience_store: {
+          icon: iconBase + 'pal2/icon29.png'
+        },
+        store: {
+          icon: iconBase + 'pal2/icon29.png'
+        }
+
+      };
+
+
+      function initMap() {
+
+        var directionsDisplay = new google.maps.DirectionsRenderer({
+          draggable: false,
+          map: map
+        });
+        var styleArray = [
+          {
+            featureType: "all",
+            stylers: [
+              { saturation: -60 }
+            ]
+          },{
+            featureType: "road.arterial",
+            elementType: "geometry",
+            stylers: [
+              { hue: "#00ffee" },
+              { saturation: 50 }
+            ]
+          },{
+            featureType: "poi.business",
+            elementType: "labels",
+            stylers: [
+              { visibility: "on" }
+            ]
+          }
+        ];
+
+        map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 16,
+          styles: styleArray,
+          // mapTypeId: google.maps.MapTypeId.HYBRID,
+          center: {lat: 41.85, lng: -87.65},
+          streetViewControl: true,
+          streetViewControlOptions: {
+            position: google.maps.ControlPosition.LEFT_CENTER
+          },
+          zoomControl: true,
+          zoomControlOptions: {
+            position: google.maps.ControlPosition.LEFT_CENTER
+          },
+          mapTypeControl: true,
+          mapTypeControlOptions: {
+            position: google.maps.ControlPosition.LEFT_CENTER
+          }
+
+        });
+
+
+        var directionPanel = getDirectionPanelHtml();
+        directionPanel.index = 1;
+        map.controls[google.maps.ControlPosition.RIGHT_CENTER].push(directionPanel);
+
+        var loginControlDiv = createElement();
+        loginControlDiv.index = 1;
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(loginControlDiv);
+
+
+        directionsDisplay.setPanel(document.getElementById('steps-panel'));
+
+        directionsDisplay.setMap(map);
+
+        if (mode === "DRIVING") {
+          var trafficLayer = new google.maps.TrafficLayer();
+          trafficLayer.setMap(map);
+        }
+        else if (mode === "TRANSIT") {
+          var transitLayer = new google.maps.TransitLayer();
+          transitLayer.setMap(map);
+        }
+        else {
+          var bikeLayer = new google.maps.BicyclingLayer();
+          bikeLayer.setMap(map);
+        }
+        calculateAndDisplayRoute(directionsService, directionsDisplay);
+      }
+
+
+
+
+        function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+
+          directionsService.route({
+
+            origin: from,
+            destination: to,
+            provideRouteAlternatives: true,
+            avoidTolls: true,
+            travelMode: google.maps.TravelMode[mode]
+          }, function (response, status) {
+            if (status === google.maps.DirectionsStatus.OK) {
+
+              directionsDisplay.setDirections(response);
+
+              console.log(response.routes);
+
+              for (var i = 0, len = response.routes.length; i < len; i++) {
+                var rboxer = new RouteBoxer();
+                var distance = radius; // km
+
+                var path = response.routes[0].overview_path;
+                var boxes = rboxer.box(path, distance);
+                for (var j = 0; j < boxes.length; j++) {
+                  var bounds = boxes[j];
+                  var centerBoxes = bounds.getCenter();
+
+                  //drawBoxes(bounds);
+
+                  var request = {
+                    location: centerBoxes,
+                    radius: convertToMeters(radius),
+                    types: getRelatedInterests(selected)
+                  };
+
+                  repeatingRequest(request);
+                }
+              }
+            } else {
+              window.alert('Directions request failed due to ' + status);
+            }
+          });
+        }
+
+
+//        function drawBoxes(bounds) {
+//          new google.maps.Rectangle({
+//            bounds: bounds,
+//            fillOpacity: 0,
+//            strokeOpacity: 1.0,
+//            strokeColor: '#000000',
+//            strokeWeight: 1,
+//            map: map
+//          });
+//        }
+
+
+        function convertToMeters(radius) {
+          return radius * 1609.34;
+        }
+
+        initMap();
+
+
+        var hash_types = {};
+        hash_types['museums'] = ['museum'];
+        hash_types['nature'] = ['park', 'campground', 'rv_park'];
+        hash_types['food'] = ['restaurant', 'food', 'cafe'];
+        hash_types['night life'] = ['casino', 'night_club', 'bar', 'movie_theater', 'bowling_alley'];
+        hash_types['kids'] = ['amusement_park', 'aquarium', 'zoo', 'museum'];
+        hash_types['gas'] = ['gas_station'];
+        hash_types['art'] = ['art_gallery'];
+        hash_types['city treasures'] = ['city_hall', 'hindu_temple'];
+
+
+        function getRelatedInterests(selected) {
+          var related = [];
+          for (var i = 0; i < selected.length; i++) {
+            var aux = hash_types[selected[i]];
+            for (var j = 0; j < aux.length; j++) {
+              related.push(aux[j]);
+            }
+          }
+          return related;
+        }
+
+
+        geocoder.geocode({'address': from}, function (results, status) {
+          if (status == google.maps.GeocoderStatus.OK) {
+            var request = {
+              location: results[0].geometry.location,
+              radius: convertToMeters(radius),
+              types: getRelatedInterests(selected)
+            };
+
+            service = new google.maps.places.PlacesService(map);
+            service.nearbySearch(request, callback);
+
+          } else {
+            window.alert("Something got wrong " + status);
+          }
+        });
+
+
+        geocoder.geocode({'address': to}, function (results, status) {
+          if (status == google.maps.GeocoderStatus.OK) {
+            var request = {
+              location: results[0].geometry.location,
+              radius: convertToMeters(radius),
+              types: getRelatedInterests(selected)
+            };
+
+            service = new google.maps.places.PlacesService(map);
+            service.nearbySearch(request, callback);
+
+          } else {
+            window.alert("Something got wrong " + status);
+          }
+        });
+
+
+        function callback(results, status) {
+          if (status == google.maps.places.PlacesServiceStatus.OK) {
+            showMarkers(results);
+          }
+        }
+
+    </script>
+
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

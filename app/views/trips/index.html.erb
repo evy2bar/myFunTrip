@@ -1,0 +1,183 @@
+    <% content_for :head do %>
+    <%= javascript_include_tag "bootstrap-dropdown-checkbox" %>
+    <%= javascript_include_tag "checkbox_related" %>
+
+
+<% end %>
+<section class="welcome">
+		<div class="container">
+			<div class="title-box">
+				<span class="font-effect-3d" id="title">MyFunTrip,</span><br>
+				<span  class="font-effect-3d" id="description">we make your trip Funtastic!!</span>
+			</div>
+			<div class="jumbotron">
+				<div>
+
+					<input type="text" class="start-point form-control geocomplete" id="formGroupExampleInput" placeholder="Enter origin location">
+					<br />
+					<input type="text" class="end-point form-control geocomplete" id="formGroupExampleInput2" placeholder="Enter destination location">
+					<br />
+
+					<div class="wish-list-container">
+						<select class="radius-index" id="radius-selector">
+							<option value="2"> 2 mi radius</option>
+							<option value="5">5 mi radius</option>
+							<option value="15">+5 mi radius</option>
+						</select>
+					</div>
+
+					<div class="travel-mode-container">
+						<select id="mode">
+							<option value="DRIVING">Driving</option>
+							<option value="WALKING">Walking</option>
+							<option value="BICYCLING">Bicycling</option>
+							<option value="TRANSIT">Transit</option>
+						</select>
+					</div>
+
+					<div class="myDropdownCheckbox" id="index-dropdown"></div>
+
+					<div style="text-align: center">
+						<button type="button" class="fun-button btn btn-success" id="index-button">HIT THE ROAD!</button>
+					</div>
+				</div>
+			</div>
+			</div>
+
+</section>
+
+
+<section class="about-container">
+<section class="slide">
+	<div class="container">
+
+		<h3 class="font-effect-3d" style="color: #FCF8E3; margin-top: 40px; margin-bottom: 25px;">About us</h3>
+
+		<p class="slide-text" style="font-family: Roboto Slab; font-size: 19px;">
+			There's a special thing about taking a road trip…it lies in a strong undercurrent of weird and wonderful
+		places and a mighty desire for adventure. From the New York island to the Gulf Stream waters, we're firm believers that
+		you're less than 5 minutes away from something (or someone) you can't find anywhere else.
+		The insatiable craving for extraordinary places drove founder Evelyn Barrios to design MyFunTrip.
+		The revolutionary web and mobile platform is the only place where travelers can seamlessly discover, plan, book, and navigate
+		their next trip. With millions of the best diners, national parks, family museums, hotels and more…MyFunTrip is the ultimate
+		road travel companion.</p>
+
+
+
+		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+			<ol class="carousel-indicators">
+				<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="3"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="4"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="5"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="6"></li>
+
+
+			</ol>
+
+			<div class="carousel-inner" role="listbox">
+
+				<div class="item active">
+					<img src="assets/colorado.jpg" alt="...">
+					<div class="carousel-caption">
+						Grand Canyon National Park, Arizona.
+					</div>
+				</div>
+
+				<div class="item">
+					<img src="assets/newyork.jpg" alt="...">
+					<div class="carousel-caption">
+						New York, New York.
+					</div>
+				</div>
+
+				<div class="item">
+					<img src="assets/miamibeach.jpg" alt="...">
+					<div class="carousel-caption">
+						Miami Beach, Florida.
+					</div>
+				</div>
+
+				<div class="item">
+					<img src="assets/staugustine.jpg" alt="...">
+					<div class="carousel-caption">
+						Saint Augustine, Florida.
+					</div>
+				</div>
+
+				<div class="item">
+					<img src="assets/seattle.jpg" alt="...">
+					<div class="carousel-caption">
+						Seattle, Washington.
+					</div>
+				</div>
+
+				<div class="item">
+					<img src="assets/santafe.JPG" alt="...">
+					<div class="carousel-caption">
+						Santa Fe, New Mexico.
+					</div>
+				</div>
+
+				<div class="item">
+					<img src="assets/atlanta.jpg" alt="...">
+					<div class="carousel-caption">
+						Atlanta, Georgia.
+					</div>
+				</div>
+
+			</div>
+
+			<!-- Controls -->
+			<!--<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">-->
+			<!--<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>-->
+			<!--<span class="sr-only">Previous</span>-->
+			<!--</a>-->
+
+			<!--<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">-->
+			<!--<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>-->
+			<!--<span class="sr-only">Next</span>-->
+			<!--</a>-->
+		</div>
+		<br>
+	</div>
+</section>
+
+<section class="about">
+	<div class="about-p">
+		<h3 class="font-effect-3d" style="color: #FCF8E3;">Meet our team</h3>
+	</div>
+
+	<div class="pic-container">
+		<div class="about-pic">
+			<img src="/assets/Evelyn-Headshot.jpg" style="margin:150px 0 0 20px;width: 250px;border-radius: 125px;">
+		</div>
+		<div class="about-text" style="font-family: Roboto Slab; font-size: 19px;">
+
+			<p>Evelyn Barrios, spelled backwards Nyleve, has a background in Education and experience in small businesses.
+				Recently found the magic whithin the computing field and joined a Web Developer bootcamp to learn how to code.
+				She is also Vegan. Evelyn is very passionate about raising environmental awareness and making her house solar panel friendly.
+				Evelyn has a 5 y/o son named Sandor, and would love to have an animal shelter to care for abandoned pets.
+
+				She spends her free time playing with her son and driving her hybrid car around the US with her family.</p>
+
+		</div>
+	</div>
+
+</section>
+
+	<div class="footer">
+		<span style="font-family: Roboto Slab; color: #080808">© MyFunTrip, Inc. 2015. Superpowered by Google Maps.</span>
+		<div class="bottom-menu">
+			<a id="go-top-button" href="">BACK TO TOP</a>
+			<!--<a href="#">HELP</a> |-->
+			<!--<a href="#">CONTACT</a> |-->
+			<!--<a href="#">TERMS OF USE</a>-->
+		</div>
+	</div>
+
+</section>
+

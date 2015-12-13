@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MyFunTrip</title>
+
+    <% if current_page?(:controller => '/results', :action => 'maps') || current_page?(:controller => '/trips', :action => 'index') %>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByrNx3ukuCGzwjIQGxmN6hsZcm-4xWUgQ&libraries=places"></script>
+        <link href='https://fonts.googleapis.com/css?family=Lobster|Sigmar+One|Anton|Jura:500,400|Oswald:400,700|Roboto+Slab:700&effect=shadow-multiple|3d|3d-float' rel='stylesheet' type='text/css'>
+
+  <% end %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application'%>
+    <%= yield :head %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body class="page">
+
+    <% if notice %>
+    <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+    <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+    <div class="header map-header">
+      <p class="navbar-text pull-left" style="font-family: Roboto Slab">
+        <% if user_signed_in? %>
+            <!--Logged in as -->
+          <% if current_page?(:controller => "devise/registrations", :action => "edit") %>
+            <%= current_user.shorter_name %>
+          <% else %>
+            <%= link_to current_user.shorter_name, edit_user_registration_path, :class => 'navbar-link font-effect-3d' %>
+          <% end %>
+
+          <%= link_to "| Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+          <% else %>
+          <% unless current_page?(:controller => "devise/registrations", :action => "new") %>
+            <%= link_to "Sign up |", new_user_registration_path, :class => 'navbar-link'  %>
+          <% end %>
+          <% unless current_page?(:controller => "devise/sessions", :action => "new") %>
+            <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+
+      <% end %>
+        <% end %>
+      </p>
+      </div>
+
+      <%= yield %>
+
+
+    </body>
+  </html>
+
+
+

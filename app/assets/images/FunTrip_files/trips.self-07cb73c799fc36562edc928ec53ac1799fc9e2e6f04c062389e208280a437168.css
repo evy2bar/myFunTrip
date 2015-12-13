@@ -1,0 +1,254 @@
+/* line 5, /Users/EVE/Desktop/ironhack-projects/finalProject/funTrip/app/assets/stylesheets/trips.scss */
+body, html {
+  height: 100%;
+}
+
+/* line 9, /Users/EVE/Desktop/ironhack-projects/finalProject/funTrip/app/assets/stylesheets/trips.scss */
+.welcome {
+  background: url("/assets/mountains.jpeg") no-repeat;
+  background-size: cover;
+  height: 100%;
+  background-position-y: 47%;
+}
+
+/* line 16, /Users/EVE/Desktop/ironhack-projects/finalProject/funTrip/app/assets/stylesheets/trips.scss */
+.about-container {
+  background: url("/assets/background5.jpg") no-repeat;
+  background-size: cover;
+}
+
+/* line 23, /Users/EVE/Desktop/ironhack-projects/finalProject/funTrip/app/assets/stylesheets/trips.scss */
+.jumbotron {
+  background-color: rgba(255, 255, 255, 0.4);
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-top: 80px;
+}
+
+/* line 30, /Users/EVE/Desktop/ironhack-projects/finalProject/funTrip/app/assets/stylesheets/trips.scss */
+select > .placeholder {
+  display: none;
+}
+
+/* line 34, /Users/EVE/Desktop/ironhack-projects/finalProject/funTrip/app/assets/stylesheets/trips.scss */
+.title-box {
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 30px;
+}
+
+/* line 40, /Users/EVE/Desktop/ironhack-projects/finalProject/funTrip/app/assets/stylesheets/trips.scss */
+.footer {
+  background: #6d8394;
+  width: 100%;
+  height: 50px;
+  bottom: 0;
+  opacity: 0.7;
+  padding-top: 17px;
+  padding-left: 20px;
+}
+
+/* line 50, /Users/EVE/Desktop/ironhack-projects/finalProject/funTrip/app/assets/stylesheets/trips.scss */
+.bottom-menu {
+  float: right;
+  margin-right: 40px;
+}
+
+/* line 55, /Users/EVE/Desktop/ironhack-projects/finalProject/funTrip/app/assets/stylesheets/trips.scss */
+.bottom-menu a {
+  color: black;
+}
+
+/* line 59, /Users/EVE/Desktop/ironhack-projects/finalProject/funTrip/app/assets/stylesheets/trips.scss */
+.footer p {
+  margin: 35px;
+}
+
+/* line 63, /Users/EVE/Desktop/ironhack-projects/finalProject/funTrip/app/assets/stylesheets/trips.scss */
+.navbar-link {
+  color: white;
+}
+
+/* line 67, /Users/EVE/Desktop/ironhack-projects/finalProject/funTrip/app/assets/stylesheets/trips.scss */
+.wish-list-container {
+  display: inline-flex;
+  margin: 10px 0;
+}
+
+/* line 72, /Users/EVE/Desktop/ironhack-projects/finalProject/funTrip/app/assets/stylesheets/trips.scss */
+.radius-index {
+  margin-right: 25px;
+  color: #F7F7F7;
+  background-color: #5bc0de;
+  border-color: #46b8da;
+}
+
+/* line 83, /Users/EVE/Desktop/ironhack-projects/finalProject/funTrip/app/assets/stylesheets/trips.scss */
+#index-dropdown .dropdown-checkbox-toggle {
+  color: white;
+  background-color: #ffa871;
+  border-color: #f1c78e;
+  border-radius: 5px;
+  border-width: 1px;
+}
+
+/* line 91, /Users/EVE/Desktop/ironhack-projects/finalProject/funTrip/app/assets/stylesheets/trips.scss */
+.map-checkboxes {
+  color: #8b7765;
+  background-color: #aeffb1;
+  border-color: #73f1bd;
+  border-radius: 5px;
+  border-width: 1px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* line 101, /Users/EVE/Desktop/ironhack-projects/finalProject/funTrip/app/assets/stylesheets/trips.scss */
+.fun-button {
+  margin-top: 35px;
+}
+
+/* line 105, /Users/EVE/Desktop/ironhack-projects/finalProject/funTrip/app/assets/stylesheets/trips.scss */
+#map-button {
+  color: #6e5a4d;
+  background-color: #73f1bd;
+  border-color: #aeffb1;
+  border-radius: 5px;
+  border-width: 1px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* line 116, /Users/EVE/Desktop/ironhack-projects/finalProject/funTrip/app/assets/stylesheets/trips.scss */
+.title-box {
+  font-family: Herculanum;
+}
+
+/* line 120, /Users/EVE/Desktop/ironhack-projects/finalProject/funTrip/app/assets/stylesheets/trips.scss */
+.devise-container {
+  position: absolute;
+  margin-left: 50%;
+  left: -125px;
+  width: 250px;
+  margin-top: 70px;
+}
+
+/* line 128, /Users/EVE/Desktop/ironhack-projects/finalProject/funTrip/app/assets/stylesheets/trips.scss */
+#user_email, #user_password {
+  width: 100%;
+}
+
+/* line 132, /Users/EVE/Desktop/ironhack-projects/finalProject/funTrip/app/assets/stylesheets/trips.scss */
+.travel-mode-container {
+  display: inline-flex;
+  margin-bottom: 10px;
+  margin-top: 3px;
+}
+
+/* line 138, /Users/EVE/Desktop/ironhack-projects/finalProject/funTrip/app/assets/stylesheets/trips.scss */
+#mode {
+  margin-right: 25px;
+  color: #F7F7F7;
+  background-color: #5bc0de;
+  border-color: #46b8da;
+}
+
+/* line 146, /Users/EVE/Desktop/ironhack-projects/finalProject/funTrip/app/assets/stylesheets/trips.scss */
+#map {
+  height: 100%;
+  width: 100%;
+}
+
+/* line 151, /Users/EVE/Desktop/ironhack-projects/finalProject/funTrip/app/assets/stylesheets/trips.scss */
+.direction-panel {
+  background-color: #eae8e9;
+  border: 2px solid #fff;
+  border-radius: 3px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  margin-top: -20px;
+  margin-right: 15px;
+  text-align: center;
+  height: 740px;
+  width: 335px;
+}
+
+/* line 163, /Users/EVE/Desktop/ironhack-projects/finalProject/funTrip/app/assets/stylesheets/trips.scss */
+.js-center {
+  color: #191919;
+  font-family: sans-serif;
+  font-size: 16px;
+  margin-top: 5px;
+  margin-left: 5px;
+  width: 50px;
+}
+
+/* line 174, /Users/EVE/Desktop/ironhack-projects/finalProject/funTrip/app/assets/stylesheets/trips.scss */
+.from-panel .to-panel {
+  width: 96%;
+  margin-left: 5px;
+}
+
+/* line 183, /Users/EVE/Desktop/ironhack-projects/finalProject/funTrip/app/assets/stylesheets/trips.scss */
+#steps-panel {
+  width: 330px;
+  height: 400px;
+  overflow: scroll;
+}
+
+/* line 189, /Users/EVE/Desktop/ironhack-projects/finalProject/funTrip/app/assets/stylesheets/trips.scss */
+.map-header {
+  background-color: #eae8e9;
+  border-radius: 3px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  margin-left: 10px;
+  /*margin-bottom: 22px;
+  margin-top: 5px;*/
+}
+
+/* line 202, /Users/EVE/Desktop/ironhack-projects/finalProject/funTrip/app/assets/stylesheets/trips.scss */
+.field {
+  margin: 5px;
+  overflow-x: scroll;
+}
+
+/* line 212, /Users/EVE/Desktop/ironhack-projects/finalProject/funTrip/app/assets/stylesheets/trips.scss */
+.about {
+  width: 100%;
+  height: 500px;
+}
+
+/* line 217, /Users/EVE/Desktop/ironhack-projects/finalProject/funTrip/app/assets/stylesheets/trips.scss */
+.about-pic {
+  width: 30%;
+}
+
+/* line 221, /Users/EVE/Desktop/ironhack-projects/finalProject/funTrip/app/assets/stylesheets/trips.scss */
+.about-text {
+  width: 70%;
+  margin-top: 150px;
+  margin-left: 80px;
+}
+
+/* line 228, /Users/EVE/Desktop/ironhack-projects/finalProject/funTrip/app/assets/stylesheets/trips.scss */
+.about-p {
+  margin-top: 40px;
+  width: 1200px;
+  position: absolute;
+  left: 50%;
+  margin-left: -600px;
+  text-align: center;
+}
+
+/* line 237, /Users/EVE/Desktop/ironhack-projects/finalProject/funTrip/app/assets/stylesheets/trips.scss */
+.pic-container {
+  width: 1200px;
+  display: flex;
+  position: absolute;
+  left: 50%;
+  margin-left: -600px;
+}
+
+/* line 245, /Users/EVE/Desktop/ironhack-projects/finalProject/funTrip/app/assets/stylesheets/trips.scss */
+.slide-text {
+  margin-bottom: 25px;
+}

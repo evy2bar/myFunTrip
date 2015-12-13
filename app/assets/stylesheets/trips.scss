@@ -1,0 +1,385 @@
+// Place all the styles related to the trips controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body, html {
+  height: 100%;
+}
+
+.welcome {
+  background: url('/assets/mountains.jpeg') no-repeat;
+  background-size: cover;
+  height: 100%;
+  background-position-y: 47%;
+}
+
+.about-container {
+  background: url('/assets/sand.jpg') no-repeat;
+  background-size: cover;
+}
+
+body.sign-up {}
+
+.jumbotron {
+  background-color: rgba(255, 255, 255, 0.4);
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-top: 80px;
+  padding-top: 30px;
+  padding-bottom: 25px;
+}
+
+select > .placeholder {
+	display: none;
+}
+
+.title-box {
+	text-align: center;
+	margin-top:80px;
+	margin-bottom: 30px;
+}
+
+.footer {
+	background: rgb(109, 131, 148);
+	width: 100%;
+	height: 50px;
+	bottom: 0;
+	opacity: 0.7;
+  padding-top: 17px;
+  padding-left: 20px;
+}
+
+.bottom-menu {
+	float: right;
+    margin-right: 40px;
+    color: #3E3E38;
+    font-family: Roboto Slab;
+}
+
+.bottom-menu a {
+	color: black;
+}
+
+.footer p {
+	margin: 35px;
+}
+
+.navbar-link {
+	color:white;
+
+}
+
+.wish-list-container {
+  display: inline-flex;
+  margin: 10px 0;
+}
+
+.radius-index {
+  margin-right: 25px;
+  color: #F7F7F7;
+  background-color: #5bc0de;
+  border-color: #46b8da;
+  height: 30px;
+  width: 125px;
+}
+
+.radius-panel {
+  background-color: #B8D19D;
+  border-color: #A3D87C;
+  color: #666767;
+}
+
+#index-dropdown .dropdown-checkbox-toggle {
+  color: white;
+  background-color: #ffa871;
+  border-color: #f1c78e;
+  border-radius: 5px;
+  border-width: 1px;
+  width: 167px;
+  height: 35px;
+  margin-top: 20px;
+}
+
+.map-checkboxes{
+  color: #8b7765;
+  border-width: 1px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.fun-button {
+  margin-top: 35px;
+  background-color: #A2BF96;
+  border-color: rgba(185, 197, 185, 0.85);
+  width: 200px;
+}
+
+#map-button {
+  color: #EAEAEA;
+  background-color:rgb(127, 170, 212);
+  border-color: #3CA1B0;
+  border-radius: 5px;
+  border-width: 1px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+}
+
+.title-box {
+  font-family: Herculanum;
+}
+
+.devise-container {
+  position: absolute;
+  width: 400px;
+  margin-top: 13%;
+  background-color: rgba(0, 0, 0, 0.36);
+  border-radius: 10px;
+  margin-left: 50%;
+  left: -200px;
+}
+
+#user_email, #user_password {
+  width: 100%;
+}
+
+.travel-mode-container {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  float: right;
+}
+
+#mode {
+  margin-right: 25px;
+  color: #F7F7F7;
+  background-color: #5bc0de;
+  border-color: #46b8da;
+  height: 30px;
+  width: 125px;
+
+}
+
+#map {
+  height: 100%;
+  width: 100%;
+}
+
+.direction-panel {
+  background-color: rgb(234, 232, 233);
+  border: 2px solid #fff;
+  border-radius: 3px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.3);
+  margin-top: -20px;
+  margin-right: 15px;
+  text-align: center;
+  height: 775px;
+  width: 390px;
+}
+
+.js-center {
+  color: rgb(25,25,25);
+  font-family: sans-serif;
+  font-size: 16px;
+  margin-top: 5px;
+  margin-left: 5px;
+  width: 50px;
+}
+
+.from-panel .to-panel {
+  width: 96%;
+  margin-left: 5px;
+}
+
+.mode-button {
+  background-color: #EACCA7;
+  color: #6A8583;
+  border-color: #C7CFBA
+
+}
+
+#steps-panel {
+  width: 100%;
+  height: 60%;
+  margin-top: 10%;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow: scroll;
+  background-color: #CDC9C4;
+}
+
+.map-header{
+  background-color: rgb(234, 232, 233);
+  border-radius: 3px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .3);
+  margin-left: 10px;
+}
+
+.new_user {
+
+}
+
+.field {
+  margin: 5px;
+  color: whitesmoke;
+}
+
+.slide {
+
+
+}
+
+.about {
+  width: 100%;
+  height: 500px;
+}
+
+.about-pic {
+  width: 30%;
+}
+
+.about-text {
+  width: 70%;
+  margin-top: 150px;
+  margin-left: 80px;
+  color: #6D6E5E;
+
+}
+
+.about-p {
+  margin-top: 40px;
+  width: 1200px;
+  position: absolute;
+  left: 50%;
+  margin-left: -600px;
+  text-align: center;
+}
+
+.pic-container {
+  width: 1200px;
+  display: flex;
+  position: absolute;
+  left: 50%;
+  margin-left: -600px;
+}
+
+.slide-text {
+  margin-bottom: 65px;
+  margin-top: 40px;
+  text-align: center;
+  color: #636455;
+}
+
+h3 {
+  text-align: center;
+  color: #bababa;
+}
+
+.fun-box {
+  height: 95px;
+}
+
+.dropdown-checkbox-toggle {
+  background-color: #CAD6E9;
+  border-radius: 5px;
+  color: #404E69;
+  border-width: 1px;
+}
+#title {
+  font-family: Lobster;
+  font-size: 40px;
+  color: #2D3C36;
+}
+
+#description {
+  font-family: anton;
+  font-size: 35px;
+  color: #eee;
+}
+
+.carousel-caption {
+  font-family: Roboto Slab;
+}
+
+.login-container {
+  height: 100%;
+  width: 100%;
+  background: url("/assets/tree2.jpg") no-repeat;
+  background-size: cover;
+}
+
+.tabs-container {
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  color: whitesmoke;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.tabs-container a {
+  color: rgb(251, 210, 79);
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.active-link {
+  cursor: pointer;
+  color: whitesmoke!important;
+}
+
+.facebook-container {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.btn-login-default {
+  color: whitesmoke;
+  background-color: transparent;
+  border-color: #fbd24f;
+  width: 120px;
+}
+
+.actions {
+  text-align: center;
+  margin-top: 20px;
+}
+
+
+.use-email {
+  margin: 0 2px 0 0;
+  position: relative;
+}
+
+.user-session-view div {
+  color: #9e9e9e;
+  font: 16px "Helvetica Neue",Helvetica,Arial,sans-serif;
+  margin: 0;
+}
+
+.use-email:before {
+  border-top: 1px solid #fbd24f;
+  content: '';
+  display: block;
+  left: 0;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+}
+
+.use-email span {
+  background: rgba(0, 0, 0, 0.36);
+  padding: 0 10px;
+  position: relative;
+}
+
+.btn-primary {
+  width: 200px;
+}
+
+.alert {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  margin-left: -170px;
+  width: 340px;
+}

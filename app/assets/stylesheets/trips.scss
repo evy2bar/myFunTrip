@@ -65,7 +65,9 @@ select > .placeholder {
 }
 
 .navbar-link {
-	color:white;
+  color:white;
+  font-size: 14px;
+  //color: #0660C1
 
 }
 
@@ -85,7 +87,8 @@ select > .placeholder {
 
 .radius-panel {
   background-color: #B8D19D;
-  border-color: #A3D87C;
+  border-color: #666767;
+  width: 150px;
   color: #666767;
 }
 
@@ -117,7 +120,7 @@ select > .placeholder {
 #map-button {
   color: #EAEAEA;
   background-color:rgb(127, 170, 212);
-  border-color: #3CA1B0;
+  border-color: #EAEAEA;
   border-radius: 5px;
   border-width: 1px;
   margin-top: 10px;
@@ -208,9 +211,7 @@ select > .placeholder {
 }
 
 .map-header{
-  background-color: rgb(234, 232, 233);
-  border-radius: 3px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, .3);
+  background-color: rgba(255, 255, 255, 0);
   margin-left: 10px;
 }
 
@@ -283,6 +284,7 @@ h3 {
   border-radius: 5px;
   color: #404E69;
   border-width: 1px;
+  width: 150px;
 }
 #title {
   font-family: Lobster;
@@ -382,4 +384,27 @@ h3 {
   left: 50%;
   margin-left: -170px;
   width: 340px;
+}
+
+.username {
+  font-family: Lobster;
+  font-size: 18px;
+
+}
+
+#mode-panel {
+  background-color: thistle;
+  color: #544D4D;
+}
+
+.nav-link-black {
+  color: #1949A7;
+}
+
+#check-panel > .panel-dropdown {
+  width: 250px;
+  position: relative;
+  left: 50%;
+  margin-left: -125px;
+
 }

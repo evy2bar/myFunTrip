@@ -71,4 +71,6 @@ $(document).on("ready",function() {
 
 
     $(".geocomplete").geocomplete();
+
+    $('.dropdown-checkbox-content').addClass('panel-dropdown');
 });

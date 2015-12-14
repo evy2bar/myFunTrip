@@ -22,25 +22,28 @@
     <p class="alert alert-danger"><%= alert %></p>
     <% end %>
     <div class="header map-header">
+      <% if current_page?(:controller => "results", :action => "maps") %>
+        <% @class = "nav-link-black" %>
+      <% end %>
+
       <p class="navbar-text pull-left" style="font-family: Roboto Slab">
         <% if user_signed_in? %>
             <!--Logged in as -->
           <% if current_page?(:controller => "devise/registrations", :action => "edit") %>
             <%= current_user.shorter_name %>
           <% else %>
-            <%= link_to current_user.shorter_name, edit_user_registration_path, :class => 'navbar-link font-effect-3d' %>
+            <%= link_to current_user.shorter_name, edit_user_registration_path, :class => "navbar-link username #{@class}" %>
           <% end %>
-
-          <%= link_to "| Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-          <% else %>
-          <% unless current_page?(:controller => "devise/registrations", :action => "new") %>
+            <%= link_to "| Logout", destroy_user_session_path, method: :delete, :class => "navbar-link #{@class}"  %>
+         <% else %>
+          <% if not_sign_in_or_up %>
             <%= link_to "Sign up |", new_user_registration_path, :class => 'navbar-link'  %>
-          <% end %>
-          <% unless current_page?(:controller => "devise/sessions", :action => "new") %>
             <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-
-      <% end %>
+          <% end %>
         <% end %>
+
+
+
       </p>
       </div>
 

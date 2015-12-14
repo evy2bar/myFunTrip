@@ -53,5 +53,14 @@ $(document).on ("ready",function() {
     });
 
     $(".geocomplete").geocomplete();
+
+
+    //
+    //var $elem = $('navbar-text');
+    //
+    //if($elem.hasClass('')){
+    //    $elem.css('color', ' #46b8da');
+    //}
+
 });
 

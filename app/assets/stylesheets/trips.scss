@@ -69,6 +69,7 @@ select > .placeholder {
   font-size: 14px;
   //color: #0660C1
 
+
 }
 
 .wish-list-container {
@@ -89,15 +90,15 @@ select > .placeholder {
   background-color: #B8D19D;
   border-color: #666767;
   width: 150px;
+  height: 30px;
   color: #666767;
 }
 
 #index-dropdown .dropdown-checkbox-toggle {
   color: white;
   background-color: #ffa871;
-  border-color: #f1c78e;
   border-radius: 5px;
-  border-width: 1px;
+  border: 1px solid #f1c78e;
   width: 167px;
   height: 35px;
   margin-top: 20px;
@@ -106,7 +107,7 @@ select > .placeholder {
 .map-checkboxes{
   color: #8b7765;
   border-width: 1px;
-  margin-top: 10px;
+  /* margin-top: 10px; */
   margin-bottom: 10px;
 }
 
@@ -120,12 +121,11 @@ select > .placeholder {
 #map-button {
   color: #EAEAEA;
   background-color:rgb(127, 170, 212);
-  border-color: #EAEAEA;
+  border: 1px solid #EAEAEA;
   border-radius: 5px;
-  border-width: 1px;
   margin-top: 10px;
   margin-bottom: 10px;
-
+  height: 30px;
 }
 
 .title-box {
@@ -173,19 +173,24 @@ select > .placeholder {
   border-radius: 3px;
   box-shadow: 0 2px 6px rgba(0,0,0,.3);
   margin-top: -20px;
-  margin-right: 15px;
+  margin-right: 40px;
   text-align: center;
-  height: 775px;
-  width: 390px;
+  height: 95%;
+  width: 400px;
+  z-index: 0;
+  position: absolute;
+  right: 0;
+  top: 20px;
 }
 
 .js-center {
   color: rgb(25,25,25);
-  font-family: sans-serif;
-  font-size: 16px;
+  //font-family: sans-serif;
+  //font-size: 16px;
   margin-top: 5px;
   margin-left: 5px;
   width: 50px;
+  cursor: pointer;
 }
 
 .from-panel .to-panel {
@@ -203,7 +208,7 @@ select > .placeholder {
 #steps-panel {
   width: 100%;
   height: 60%;
-  margin-top: 10%;
+  margin-top: 5%;
   padding-left: 5px;
   padding-right: 5px;
   overflow: scroll;
@@ -276,7 +281,7 @@ h3 {
 }
 
 .fun-box {
-  height: 95px;
+  height: 140px;
 }
 
 .dropdown-checkbox-toggle {
@@ -395,6 +400,8 @@ h3 {
 #mode-panel {
   background-color: thistle;
   color: #544D4D;
+  height: 25px;
+  width: 100px;
 }
 
 .nav-link-black {
@@ -402,9 +409,19 @@ h3 {
 }
 
 #check-panel > .panel-dropdown {
-  width: 250px;
-  position: relative;
+  width: 150px;
   left: 50%;
-  margin-left: -125px;
+  margin-left: -74px;
+  /* max-height: 215px; */
+  overflow: auto;
+}
 
+.map-checkboxes .dropdown-checkbox-toggle {
+  height: 30px;
+}
+
+.fun-box-items {
+  position: absolute;
+  bottom: 60px;
+  left: 110px;
 }

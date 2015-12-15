@@ -18,8 +18,7 @@ function createElement() {
 
 $(document).on("ready", function () {
     $(".js-center").on("click", function () {
-        //alert("hello")
-        map.setCenter( from.lat,from.lng);
+        map.setCenter(fromLocation);
     });
    // var btn = $(event.currentTarget);
 })

@@ -2,28 +2,33 @@
 <% content_for :head do %>
     <%= javascript_include_tag "bootstrap-dropdown-checkbox" %>
     <%= javascript_include_tag "checkbox_related" %>
-
-
 <% end %>
 
 
 <div class="hidden">
   <div class="direction-panel">
     <div class="travel-mode-container-panel">
-        <span class="js-center">Center</span>
-       <span class="mode-button">
-          <select id="mode-panel">
-            <option value="DRIVING">Driving</option>
-            <option value="WALKING">Walking</option>
-            <option value="BICYCLING">Bicycling</option>
-            <option value="TRANSIT">Transit</option>
-          </select>
-      </span>
+      <div class="js-center">
+          <img src="/assets/location.png" style="width: 35px">
+      </div>
+      <div>
+         <span class="mode-button">
+            <select id="mode-panel">
+              <option value="DRIVING">Driving</option>
+              <option value="WALKING">Walking</option>
+              <option value="BICYCLING">Bicycling</option>
+              <option value="TRANSIT">Transit</option>
+            </select>
+        </span>
+      </div>
     </div>
 
     <br/>
-      <input type="text" class="from-panel geocomplete" id="formGroupExampleInput" placeholder="From">
-      <input type="text" class="to-panel geocomplete" id="formGroupExampleInput2" placeholder="Destination">
+    <div style="display: flex; margin: 0 10px">
+      <input type="text" class="form-control from-panel geocomplete" id="formGroupExampleInput" placeholder="From">
+      &nbsp;&nbsp;
+      <input type="text" class="form-control to-panel geocomplete" id="formGroupExampleInput2" placeholder="Destination">
+    </div>
 
 
     <!--<div class="routes-box" id="routes">-->
@@ -32,23 +37,28 @@
 
     <div id="steps-panel"></div>
       <br/>
-    <select class="radius-panel" id="radius-selector">
-      <option value="1">1 mi radius</option>
-      <option value="3">3 mi radius</option>
-      <option value="10">+5 mi radius</option>
-    </select>
-      <br/>
-    <div class="myDropdownCheckbox map-checkboxes" id="check-panel">
-      <!--<div class="dropdown-checkbox-content panel-dropdown"></div>-->
+    <div style="display: flex; margin: 0 25px; justify-content: space-between;">
+      <select class="radius-panel" id="radius-selector">
+        <option value="1">1 mi radius</option>
+        <option value="3">3 mi radius</option>
+        <option value="10">+5 mi radius</option>
+      </select>
 
+      <div class="myDropdownCheckbox map-checkboxes" id="check-panel"></div>
     </div>
 
     <section class="fun-box">
-
+      <div class="fun-box-items">
+        <img src="https://maps.google.com/mapfiles/kml/pal2/icon19.png">
+        <img src="https://maps.google.com/mapfiles/kml/pal2/icon4.png">
+        <img src="https://maps.google.com/mapfiles/kml/pal3/icon21.png">
+        <img src="https://maps.google.com/mapfiles/kml/pal3/icon30.png">
+        <img src="https://maps.google.com/mapfiles/kml/pal2/icon3.png">
+      </div>
     </section>
 
     <div>
-      <button type="button" class="fun-button" id="map-button">Show my options</button>
+      <button type="button" class="fun-button" id="map-button">Recalculate Route</button>
     </div>
 
   </div>

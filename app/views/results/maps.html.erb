@@ -18,8 +18,7 @@
 //        });
 
 
-      var map;
-      var place, service;
+      var map, place, service, fromLocation;
       var geocoder =  new google.maps.Geocoder();
       var from = localStorage.getItem("startpoint");
       var to = localStorage.getItem("endpoint");
@@ -269,6 +268,8 @@
 
         geocoder.geocode({'address': from}, function (results, status) {
           if (status == google.maps.GeocoderStatus.OK) {
+            fromLocation = results[0].geometry.location;
+
             var request = {
               location: results[0].geometry.location,
               radius: convertToMeters(radius),
